@@ -1,0 +1,164 @@
+﻿<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="scripts/jquery.js"></script>-->
+    <script src="cordova.js"></script> <!--VS hibát dob rá hogy nem találja, de ne töröld, kell-->
+    <script src="scripts/index.js"></script>
+    <title>LegyenonisMiliomos</title>
+</head>
+<body>
+<!-- Videó -->
+<div class="fullscreen-bg">
+    <video loop muted autoplay poster="media/png/background.png" class="fullscreen-bg__video">
+        <source src="media/mp4/background.mp4" type="video/mp4">        
+    </video>
+</div>
+<!-- Zene -->
+<!-- <iframe src="media/wav/ost-temporary.wav" allow="autoplay" id="audio" style="display:none"></iframe>-->
+<audio id="player" autoplay loop>
+   <!-- <source src="media/wav/ost-temporary.mp3" type="audio/mp3"> -->
+</audio>
+<!-- Media cuccok vége -->
+    <div id="welcome" class="w3-padding w3-display-middle btn-group" style="">
+        <button onclick="ShowSignup()">Register</button>
+        <button onclick="ShowLogin()">Login</button>
+        <button id="btn_exitgame1" onclick="ExitGame()">Exit</button>
+	</div>	
+    <div id="signup_form" style="display: none;" class="w3-padding w3-display-topmiddle btn-group">
+        <h1 class="vertical">Registration</h1>
+ 	<div>	<table style="text-align: left; width: 100%" border="0"
+ cellpadding="2" cellspacing="2">
+    <tr>
+      <td><label>Email: </label></td>
+      <td><input type="text" name="s_email" id="regbox"></td>
+    </tr>
+    <tr>
+      <td>Username:</td>
+      <td> <input type="text" name="s_username" id="regbox"></td>
+    </tr>
+    <tr>
+      <td>Password: </td>
+      <td><input type="password" name="s_password" id="regbox"></td>
+    </tr>
+</table></div>		   
+        <button id="btn_signup" onclick="Signup()">Sign up</button>
+        <button id="btn_cancelsignup" onclick="CancelSignup()">Cancel</button>
+    </div>
+    <div id="login_form" style="display: inline; display:none" class="w3-padding w3-display-topmiddle btn-group">
+        <h1 class="vertical">Login</h1>
+   		<div>		
+		<table style="text-align: left; width: 100%;" border="0"
+ cellpadding="2" cellspacing="2">
+    <tr>
+      <td>Username</td>
+      <td><input type="text" name="l_username" id="regbox"></td>
+    </tr>
+    <tr>
+      <td>Password: </td>
+      <td><input type="password" name="l_password" id="regbox"></td>
+    </tr>
+</table>
+		</div>
+      <button id="btn_login" onclick="Login()">Login</button>
+        <button id="btn_cancellogin"onclick="CancelLogin()">Cancel</button>
+    </div>
+    <div id="mainmenu" class="w3-display-middle w3-padding btn-group" style="display: none;">
+        <h1 class="vertical" id="greet">Welcome </h1>
+        <button id="btn_startgame" class="btn-group" onclick="StartGame()">Start a game</button>
+        <button class="btn-group" onclick="GetScores()">Highscores</button>
+        <button id="btn_exitgame2" class="btn-group" onclick="ExitGame()">Exit</button>
+    </div>
+    <div id="playground">
+        <h3 class="w3-display-topmiddle text-kerdes" id="questiontext" style="top:4%;left:42%;"></h3>
+        <button class="button-anwser1" id="answer1" onclick="CheckAnswer('#answer1')">asd</button>
+        <button class="button-anwser2" id="answer2" onclick="CheckAnswer('#answer2')">asd</button>
+        <button class="button-anwser3" id="answer3" onclick="CheckAnswer('#answer3')">asd</button>
+        <button class="button-anwser4" id="answer4" onclick="CheckAnswer('#answer4')">asd</button>
+        <div class="w3-display-bottomright-help btn-group-help">
+            <!-- Ideiglenes helye a Help gomboknak -->
+            <button id="help1" onclick="HelpRemove(2)">Felezés!</button>
+
+            <button id="help3" onclick="AskTheAudience()">közönség</button>
+
+            <!--<button id="help2" onclick="alert('My tip is: '+HelpTip1());">Einstein tipje!</button>-->
+            <button id="help2" onclick="HelpEinstein()">Einstein tipje!</button>
+        </div>
+
+        <div id="scoreboard" class="w3-display-topright w3-padding vertical" style="margin: auto;">
+            <div class="w3-display-middle">
+			<table id="scoreboard_table" style="font-size: 12px;line-height: 0.6;">
+                <caption id="counter"></caption>
+            </table>
+			</div>
+            <!--
+        <div id="counter" class="w3-display-topleft w3-padding">
+        -->
+        </div>
+        <!--Einstein-->
+        <div class="vertical w3-display-middle" id="help_einstein">
+            <div class="w3-display-middle" style="top:40%;">
+				<img src="media/png/help_einstein.png" alt="Einstein gondolkodott a kérdéseden..." style="vertical-align: middle;height: 170px;">
+				<p style="vertical-align: middle;margin-bottom:0%;margin-top: 0px;">Úgy vélem, a helyes válasz:</p>
+				<button id="einstein_anwser" class="button-anwser-einstein">Válasz</button>
+			</div>
+			<div class="w3-display-bottommiddle-fix btn-group">
+				<button onclick="HelpEinsteinRefuse()">Folytatás!</button>
+			</div>
+        </div>
+
+
+
+        <!--Ask Audi-->
+        <div id="ask_Audi" class="vertical w3-display-middle">
+			<div class="w3-display-middle" style="top:36%;height: 70%;width:100%;">
+				<p style="margin-bottom: 0px;margin-top: 0px;">
+				<button class="button-anwser" id="audition_question1">Válasz</button>
+				<canvas class="" id="audition_anwser1" width="150" height="25" style="border:1px solid black;"></canvas>
+				</p>
+				<p style="margin-bottom: 0px;margin-top: 0px;">
+				<button class="button-anwser" id="audition_question2">Válasz</button>
+				<canvas class="" id="audition_anwser2" width="150" height="25" style="border:1px solid black;"></canvas>
+				</p>
+				<p style="margin-bottom: 0px;margin-top: 0px;">
+				<button class="button-anwser" id="audition_question3">Válasz</button>
+				<canvas class="" id="audition_anwser3" width="150" height="25" style="border:1px solid black;"></canvas>
+				</p>
+				<p style="margin-bottom: 0px;margin-top: 0px;">
+				<button class="button-anwser" id="audition_question4">Válasz</button>
+				<canvas class="" id="audition_anwser4" width="150" height="25" style="border:1px solid black;"></canvas>
+				</p>
+			</div>
+			<div class="w3-display-bottommiddle-fix btn-group">
+				<button  onclick="ByeAudi()">Folytatás!</button>
+			</div>
+        </div>
+
+
+    </div>
+    <div id="AlertDiv" class="vertical w3-display-middle">
+        <p id="alertmessage"></p>
+        <div class="w3-display-bottommiddle-fix btn-group">
+            <button id="continue">Folytatás!</button>
+        </div>
+    </div>
+    <div id="HighScoreDiv" class="vertical w3-display-middle">
+        <div>
+            <table id="highscore"></table>
+        </div>
+        <div class="w3-display-bottommiddle-fix btn-group">
+            <button onclick="$('#HighScoreDiv').fadeOut('slow')">Folytatás!</button>
+        </div>
+    </div>
+</body>
+</html>

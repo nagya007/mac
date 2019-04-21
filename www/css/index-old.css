@@ -1,0 +1,245 @@
+#screen_game{
+	position:relative;
+	margin:auto;
+	width:50%;
+	min-width:768px;
+	max-width:50%;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+body 
+{
+
+}
+/* MEDIA CUCC BACKGROUND */
+audio { 
+   display:none;
+}
+
+fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
+/* Ebbe ker�l a k�rd�s j�t�k k�zben */
+.text-kerdes {
+    font: normal 120%/1 Impact, Charcoal, sans-serif;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 90%;
+    height: auto;
+    padding: 8px;
+    overflow: visible;
+    display: block;
+    float: none;
+    z-index: auto;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: static;
+}
+
+/* Ebbe ker�lnek a 4 v�lasz j�t�k k�zbe */
+.button-anwser1, .button-anwser2, .button-anwser3, .button-anwser4 {
+    /* Ezek a gombok j�t�k k�zben */
+    /* Bal fels� gomb */
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 48%;
+    height: 25%;
+    position: absolute;
+    cursor: pointer;
+    /* Style stuff */
+    margin: auto;
+    padding: inherit;
+    border: 6px solid rgba(255,255,0,1);
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    font: normal 100%/normal "Times New Roman", Times, serif;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #000000;
+}
+/* Hol helyezkedik el, el�g rossz sztem de m�kszik! */
+.button-anwser1 {
+    left: 0%;
+    top: 27%;
+}
+.button-anwser2 {
+    top:26%;
+    left: 50%;
+}
+.button-anwser3 {
+    top: 55%;
+    left: 0%;
+}
+.button-anwser4 {
+    top: 55%;
+    left: 50%;
+}
+.w3-padding {
+    padding: 8px 16px !important
+}
+.w3-display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}
+.w3-display-bottommiddle{
+	position:absolute;
+	left:50%;
+	bottom:0;
+	transform:translate(-50%,0%);
+	-ms-transform:translate(-50%,0%)
+}
+.w3-display-topmiddle {
+	position:absolute;
+	left:50%;
+	top:-25;
+	transform:translate(-50%,0%);
+	-ms-transform:translate(-50%,0%)
+}
+.w3-display-topright{
+	position:absolute;
+	right:0;top:0
+}
+.counter{
+    padding: 25px 25px 25px 25px; /* padding-top + padding-bottom + text area = image height */
+    margin: 25px 25px 25px 25px; /* offset vertical: half of image height */
+}
+
+
+/*
+.w3-display-top15 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}*/
+
+
+.btn-group button {
+    font: normal 200%/normal "Times New Roman", Times, serif;
+    color: rgba(255,255,255,0.9);
+    background: #0199d9;
+    border: 1px solid #018dc4;
+    border-radius: 3px;
+
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+.btn-group-help button {
+    font: normal 100%/normal "Times New Roman", Times, serif;
+    color: #080c00;
+    background: #08d169;
+    border: 1px solid #018dc4;
+    border-radius: 3px;
+
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+	width: 120px;
+	text-align: center;
+	float: left;
+}
+button, button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.vertical {
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+app {
+    background-position: left center;
+    padding: 75px 0px 75px 170px; /* padding-top + padding-bottom + text area = image height */
+    margin: -90px 0px 0px -198px; /* offset vertical: half of image height */
+    /* offset horizontal: half of image width and text area width */
+}
+
+#welcome {
+
+}
+
+#signup_form {
+    display: none;
+/*    position:fixed;
+    top: 50%;
+    left: 50%;*/
+}
+#login_form {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+}
+#mainmenu {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+}
+#playground {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+}
+@keyframes wronganimation {
+    0%   { background-color: #00ff00;}
+    49% { background-color: #00ff00; }
+    50% { background-color: #000000; }
+    99% { background-color: #000000; }
+    100% { background-color: #00ff00; }
+}

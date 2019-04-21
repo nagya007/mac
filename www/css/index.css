@@ -1,0 +1,389 @@
+
+body 
+{
+
+}
+/* MEDIA CUCC BACKGROUND */
+audio { 
+   display:none;
+}
+
+fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
+/* Ebbe kerül a kérdés játék közben */
+.text-kerdes {
+    font: normal 120%/1 Impact, Charcoal, sans-serif;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 50%;
+    height: auto;
+    padding: 8px;
+    overflow: visible;
+    display: block;
+    float: none;
+    z-index: auto;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: static;
+}
+
+/* Ebbe kerülnek a 4 válasz játék közbe */
+.button-anwser1, .button-anwser2, .button-anwser3, .button-anwser4, .button-anwser-einstein, .button-anwser {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+	width:30%;
+    height: 20%;
+    cursor: pointer;
+    /* Style stuff */
+    border: 6px solid #58D3F7;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+    font: normal 100%/normal Arial, Helvetica, Sans-serif;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #170B3B;
+}
+
+.button-anwser1, .button-anwser2, .button-anwser3, .button-anwser4 {
+    /* Ezek a gombok játék közben */
+    /* Bal felső gomb */
+    position: absolute;
+    margin: auto;
+    padding: inherit;
+	width:30%;
+    height: 20%;
+}
+.button-anwser-einstein {
+	/* Einstein */
+	width:100%;
+}
+.button-anwser-audience {
+	/* Einstein */
+	width:15%;
+    height: 10%;
+}
+.button-anwser {
+	/* Einstein */
+	width:30%;
+    height: 20%;
+}
+
+/* Hol helyezkedik el, elég rossz sztem de mükszik! */
+.button-anwser1{
+    left: 3%;
+    top: 35%;
+}
+.button-anwser2 {
+    left: 40%;
+	top:35%;
+}
+.button-anwser3 {
+    left: 3%;
+	top: 60%;
+}
+.button-anwser4 {
+    left: 40%;
+	top: 60%;
+}
+.w3-padding {
+    padding: 8px 16px !important
+}
+#answer1:hover
+{
+	background-color:#81DAF5;
+}
+#answer2:hover
+{
+	background-color:#81DAF5;
+}
+#answer3:hover
+{
+	background-color:#81DAF5;
+}
+#answer4:hover
+{
+	background-color:#81DAF5;
+}
+.w3-display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}
+.w3-display-right{
+	position:absolute;
+	top:50%;
+	right:0%;
+	transform:translate(0%,-50%);
+	-ms-transform:translate(0%,-50%)
+}
+.w3-display-left{
+	position:absolute;
+	top:50%;
+	left:0%;
+	transform:translate(0%,-50%);
+	-ms-transform:translate(-0%,-50%)
+}
+.w3-display-right{
+	position:absolute;
+	top:50%;
+	right:0%;
+	transform:translate(0%,-50%);
+	-ms-transform:translate(0%,-50%)
+}
+.w3-display-bottommiddle{
+	position:absolute;
+	left:90%;
+	bottom:20%;
+	transform:translate(-50%,0%);
+	-ms-transform:translate(-50%,0%)
+	
+}
+.w3-display-bottommiddle-fix{
+	position:absolute;
+	left:50%;
+	bottom:0%;
+	transform:translate(-50%,0%);
+	-ms-transform:translate(-50%,0%)
+	
+}
+.w3-display-topmiddle {
+	position:absolute;
+	left:50%;
+	top:-25;
+	transform:translate(-50%,0%);
+	-ms-transform:translate(-50%,0%)
+}
+.w3-display-topleft{
+	position:absolute;
+	left:0;top:0
+}
+.w3-display-topright{
+	position:absolute;
+	right:0;top:0
+}
+.w3-display-bottomright-help{
+	position:absolute;
+	left:80%;
+	bottom:5%;
+}
+#counter{
+    padding: 2px 2px 2px 2px; /* padding-top + padding-bottom + text area = image height */
+    margin: 2px 2px 2px 2px; /* offset vertical: half of image height */
+	font-size:110%;
+}
+
+
+/*
+.w3-display-top15 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}*/
+
+
+.btn-group button {
+    font: normal 200%/normal Arial, Helvetica, Sans-serif;
+    color: rgba(255,255,255,0.9);
+    background: #0199d9;
+    border: 1px solid #018dc4;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+.btn-group-help button {
+    font: normal 100%/normal Arial, Helvetica, Sans-serif;
+    color: #080c00;
+    background: #81DAF5;
+    border: 1px solid #018dc4;
+    border-radius: 90%;
+
+    padding: 10px 20px; /* Some padding /*
+    cursor: pointer; /* Pointer/hand icon */
+	width: 120px;
+	text-align: center;
+	float: left; 
+}
+button, button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.vertical {
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+app {
+    background-position: left center;
+    padding: 75px 0px 75px 170px; /* padding-top + padding-bottom + text area = image height */
+    margin: -90px 0px 0px -198px; /* offset vertical: half of image height */
+    /* offset horizontal: half of image width and text area width */
+}
+
+#welcome {
+
+}
+
+#signup_form {
+    display: none;
+/*    position:fixed;
+    top: 50%;
+    left: 50%;*/
+	font: normal 100%/normal Arial, Helvetica, Sans-serif;
+}
+#login_form {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+	font: normal 100%/normal Arial, Helvetica, Sans-serif;
+}
+#mainmenu {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+	font: normal 100%/normal Arial, Helvetica, Sans-serif;
+}
+#playground {
+    display: none;
+/*    position: fixed;
+    top: 50%;
+    left: 50%;*/
+}
+#scoreboard {
+	font: normal 5%/normal Arial, Helvetica, Sans-serif;
+	font-size: 25%;
+	justify-content: center;
+	vertical-align:middle;
+	background-color:#81DAF5;
+	width: 16%;
+	height: 40%;
+	border: 1px solid blue;
+}
+#help_einstein {
+    display: none;
+	background-color:#81DAF5;
+	top:50%;
+	width: 60%;
+	height: 95%;
+	border: 1px solid blue;
+	font: normal 100%/normal Arial, Helvetica, Sans-serif;
+}
+#ask_Audi {
+    display: none;
+	background-color:#81DAF5;
+	top:45%;
+	width: 60%;
+	height: 85%;
+	border: 1px solid blue;
+}
+th, td {
+	vertical-align: middle;
+}
+
+@keyframes wronganimation {
+    0%   { background-color: #00ff00;}
+    49% { background-color: #00ff00; }
+    50% { background-color: #000000; }
+    99% { background-color: #000000; }
+    100% { background-color: #00ff00; }
+}
+
+#regbox {
+    background-color: lightblue;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+#AlertDiv {
+    display: none;
+    position: absolute;
+    background-color: rgba(129,218,245,0.95); /*same color, but with some transparency*/
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid blue;
+}
+
+#alertmessage {
+    position: relative;
+    font-size: 24px;
+    top: 20%;
+    color: blue;
+}
+
+#HighScoreDiv {
+    display: none;
+    position: absolute;
+    background-color: rgba(129,218,245,0.95); /*same color, but with some transparency*/
+    top: 40%;
+    width: 40%;
+    height: 60%;
+    border: 1px solid blue;
+}
+
+#highscore {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    color: blue;
+    margin: 10px;
+	font: normal 100%/normal Arial, Helvetica, Sans-serif;
+}
